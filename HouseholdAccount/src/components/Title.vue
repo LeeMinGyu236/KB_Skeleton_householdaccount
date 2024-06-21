@@ -1,0 +1,192 @@
+<template>
+  <div>
+    <header class="title" @click="handleClick">
+      <span>Simple Household Account</span>
+    </header>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Title',
+  methods: {
+    handleClick() {
+      alert('서울 아파트 평균 매매가격은 지난해 11월 12억8220만원이다. ');
+    },
+  },
+};
+</script>
+
+<style scoped>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
+
+* {
+  font-family: 'Pretendard';
+}
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+body {
+  display: flex;
+  margin: 0 auto;
+  width: 90vw;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  padding: 50px 0;
+  font-size: 5em;
+  line-height: 0.93em;
+  font-weight: bold;
+  letter-spacing: -3px;
+}
+.title span {
+  font-family: 'Damion';
+  font-size: 1em;
+}
+
+/* nav */
+.prev-modal-btn {
+  cursor: pointer;
+  padding-right: 5px;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+.prev-modal-btn:hover {
+  color: rgb(16, 0, 48);
+  opacity: 60%;
+}
+.date-text {
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+.dateList {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.dateList li {
+  flex: 1;
+  text-align: center;
+}
+
+/* modal */
+.modal {
+  display: none;
+  padding: 26px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 580px;
+  background-color: #fff;
+  border: 5px solid #000;
+  box-sizing: border-box;
+}
+.modal.on {
+  display: block;
+}
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-title h1 {
+  margin: 0;
+}
+.modal-title #modal-close {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.modal-title #modal-close span {
+  display: inline-block;
+  position: relative;
+  width: 22px;
+  height: 3px;
+  background-color: #000;
+}
+.modal-title #modal-close span:first-child {
+  transform: rotate(45deg);
+}
+.modal-title #modal-close span:last-child {
+  top: -19px;
+  transform: rotate(-45deg);
+}
+
+/* formbox */
+.formBox {
+  margin: 40px 0;
+}
+.formBox h3 {
+  font-size: 1.3em;
+  text-align: center;
+}
+.formBox .input-field {
+  border: none;
+  border-bottom: 3px solid #000;
+  font-size: 1.01em;
+  margin: 3px;
+  width: 160px;
+}
+.formBox .inputSubmit {
+  cursor: pointer;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  border-radius: 13px;
+}
+.menu-remove-button,
+.menu-edit-button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  border: 1px solid #000;
+  border-radius: 13px;
+  box-sizing: border-box;
+}
+
+/* itemlist */
+#itemList {
+  list-style: none;
+  padding: 1px 5px;
+}
+.itemListProduct {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.itemListProduct:first-child {
+  margin-top: 12px;
+}
+.itemListProduct .itemListName {
+  flex: 2;
+  text-align: left;
+}
+.itemListProduct .itemListPrice {
+  flex: 1;
+  text-align: right;
+  padding-right: 7px;
+}
+.itemListProduct .menu-edit-button,
+.itemListProduct .menu-remove-button {
+  flex: 0.2;
+  text-align: center;
+  margin-left: 3px;
+}
+</style>

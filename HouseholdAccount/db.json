@@ -1,0 +1,100 @@
+{
+  "transactions": [
+    {
+      "id": "dfa7",
+      "date": "2024-06-03",
+      "category": "식비",
+      "amount": 36000,
+      "custom": "지출",
+      "memo": "족발"
+    },
+    {
+      "id": "224e",
+      "date": "2024-06-13",
+      "category": "여가",
+      "amount": 125000,
+      "custom": "지출",
+      "memo": "콘서트 티켓"
+    },
+    {
+      "id": "9b60",
+      "date": "2024-06-13",
+      "category": "기타",
+      "amount": 970000,
+      "custom": "지출",
+      "memo": "기타 구매\n"
+    },
+    {
+      "id": "f354",
+      "date": "2024-06-13",
+      "category": "교통비",
+      "amount": 65000,
+      "custom": "지출",
+      "memo": "교통카드 충전"
+    },
+    {
+      "id": "1318",
+      "date": "2024-06-13",
+      "category": "식비",
+      "amount": 210000,
+      "custom": "지출",
+      "memo": "오마카세"
+    },
+    {
+      "id": "214c",
+      "date": "2024-06-12",
+      "category": "월급",
+      "amount": 5000000,
+      "custom": "수입",
+      "memo": "5월 월급"
+    },
+    {
+      "id": "d29b",
+      "date": "2024-06-13",
+      "category": "생활비",
+      "amount": 24650,
+      "custom": "지출",
+      "memo": "선크림 구매"
+    },
+    {
+      "id": "2545",
+      "date": "2024-06-04",
+      "category": "식비",
+      "amount": 38800,
+      "custom": "지출",
+      "memo": "식재료 구입"
+    },
+    {
+      "id": "5e68",
+      "date": "2024-06-06",
+      "category": "식비",
+      "amount": 10000,
+      "custom": "지출",
+      "memo": "순대국"
+    },
+    {
+      "id": "12b4",
+      "date": "2024-06-07",
+      "category": "식비",
+      "amount": 8000,
+      "custom": "지출",
+      "memo": "김씨네김치찌개"
+    },
+    {
+      "id": "6f7a",
+      "date": "2024-06-08",
+      "category": "기타",
+      "amount": 6000,
+      "custom": "지출",
+      "memo": "인생네컷"
+    },
+    {
+      "id": "f616",
+      "date": "2024-06-09",
+      "category": "여가",
+      "amount": 8000,
+      "custom": "지출",
+      "memo": "pc방 충전"
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+<template>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark mt-2 custom-navbar">
+    <button class="navbar-toggler" type="button" @click="changeIsNavShow">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div :class="navClass" class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav nav-fill w-100">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/">홈</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/transactions">거래내역</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/transactionSummary">지출요약</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/summary">달력</router-link>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      isNavShow: false,
+    };
+  },
+  computed: {
+    navClass() {
+      return {
+        'collapse navbar-collapse': true,
+        show: this.isNavShow,
+      };
+    },
+  },
+  methods: {
+    changeIsNavShow() {
+      this.isNavShow = !this.isNavShow;
+    },
+  },
+};
+</script>
+
+<style scoped>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
+
+* {
+  font-family: 'Pretendard';
+}
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+body {
+  display: flex;
+  margin: 0 auto;
+  width: 90vw;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  padding: 50px 0;
+  font-size: 5em;
+  line-height: 0.93em;
+  font-weight: bold;
+  letter-spacing: -3px;
+}
+.title span {
+  font-family: 'Damion';
+  font-size: 1em;
+}
+
+/* nav */
+.custom-navbar {
+  height: 50px; /* 원하는 높이로 설정 */
+  padding: 0; /* 패딩 제거 */
+}
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem; /* 링크의 패딩 조정 */
+}
+.navbar-toggler {
+  padding: 0.25rem 0.5rem; /* 토글 버튼의 패딩 조정 */
+}
+.navbar-brand {
+  padding: 0.25rem 1rem; /* 브랜드의 패딩 조정 */
+}
+.prev-modal-btn {
+  cursor: pointer;
+  padding-right: 5px;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+.prev-modal-btn:hover {
+  color: rgb(16, 0, 48);
+  opacity: 60%;
+}
+.date-text {
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+.dateList {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.dateList li {
+  flex: 1;
+  text-align: center;
+}
+
+/* modal */
+.modal {
+  display: none;
+  padding: 26px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 580px;
+  background-color: #fff;
+  border: 5px solid #000;
+  box-sizing: border-box;
+}
+.modal.on {
+  display: block;
+}
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-title h1 {
+  margin: 0;
+}
+.modal-title #modal-close {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.modal-title #modal-close span {
+  display: inline-block;
+  position: relative;
+  width: 22px;
+  height: 3px;
+  background-color: #000;
+}
+.modal-title #modal-close span:first-child {
+  transform: rotate(45deg);
+}
+.modal-title #modal-close span:last-child {
+  top: -19px;
+  transform: rotate(-45deg);
+}
+
+/* formbox */
+.formBox {
+  margin: 40px 0;
+}
+.formBox h3 {
+  font-size: 1.3em;
+  text-align: center;
+}
+.formBox .input-field {
+  border: none;
+  border-bottom: 3px solid #000;
+  font-size: 1.01em;
+  margin: 3px;
+  width: 160px;
+}
+.formBox .inputSubmit {
+  cursor: pointer;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  border-radius: 13px;
+}
+.menu-remove-button,
+.menu-edit-button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  border: 1px solid #000;
+  border-radius: 13px;
+  box-sizing: border-box;
+}
+
+/* itemlist */
+#itemList {
+  list-style: none;
+  padding: 1px 5px;
+}
+.itemListProduct {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.itemListProduct:first-child {
+  margin-top: 12px;
+}
+.itemListProduct .itemListName {
+  flex: 2;
+  text-align: left;
+}
+.itemListProduct .itemListPrice {
+  flex: 1;
+  text-align: right;
+  padding-right: 7px;
+}
+.itemListProduct .menu-edit-button,
+.itemListProduct .menu-remove-button {
+  flex: 0.2;
+  text-align: center;
+  margin-left: 3px;
+}
+</style>
